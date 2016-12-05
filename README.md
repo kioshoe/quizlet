@@ -6,3 +6,4 @@ At the end of the quiz, users are given the option to save the quiz for reviewin
 It's currently written to accomodate multiple choice questions with 4 possible choices. This can be adapted to your needs by changing the quiz function.
 
 Sample questions and quiz results have been provided in the repository.
+To run in terminal, use the command python Quiz_Template.py Sample.csv, replacing filenames as necessary.
