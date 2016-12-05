@@ -1,7 +1,8 @@
 #Sample Quiz Template (Submission only)
 #Last updated: 2016/12/04
 
-#Imports excel file
+#Imports spreadsheet
+from sys import argv
 import csv, random
 
 #Global variables 
@@ -12,9 +13,10 @@ student_answers = []
 #Reads excel file and saves the information into the questions variable
 def read_questions():
 	global count
+	script, spreadsheet = argv
 	questions = []
 	
-	with open("Sample.csv", 'rb') as sample_questions:
+	with open(spreadsheet, 'rb') as sample_questions:
 		reader = csv.reader(sample_questions)
 		for row in reader:
 			count += 1
