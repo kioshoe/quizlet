@@ -1,5 +1,5 @@
 # quizlet
-This piece of code turns questions saved in a csv file into a multiple choice quiz format. 
+This piece of code turns questions saved in a csv file into a multiple choice quiz. 
 It allows students to create quick shareable study guides for each other to test their knowledge on different subjects.
 At the end of the quiz, users are given the option to save the quiz for reviewing later on. 
 
