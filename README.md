@@ -5,4 +5,4 @@ At the end of the quiz, users are given the option to save the quiz for reviewin
 
 It's currently written to accomodate multiple choice questions with 4 possible choices. This can be adapted to your needs by changing the quiz function.
 
-Sample csv files with questions and the saved text file have been provided in the repository.
+Sample questions and quiz results have been provided in the repository.
