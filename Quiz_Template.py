@@ -70,7 +70,6 @@ def main():
 	questions = read_questions() 
 	num = count - 1
 
-	print "This is a quiz to test your knowledge on (insert subject here)."
 	print "There will be %s of multiple choice questions." %num
 	print "Would you like to begin? (Press Y to continue.)"
 
@@ -83,7 +82,7 @@ def main():
 		
 		summary = "You answered %s out of %s questions correctly!" %(score, num)
 		print summary
-		print "Would you like to save your answers for reference? (Press Y to continue.)"
+		print "Would you like to save a copy of this quiz? (Press Y to continue.)"
 		save = raw_input(prompt)
 
 #Writes user answers to a file so they have a copy either for their own reference or for submission purposes
@@ -93,16 +92,34 @@ def main():
 			filename = raw_input(prompt)+'.txt'
 			
 			file = open(filename, "w") 
+			file.write("Name: ")
 			file.write(name)
 			file.write("\n")
+			file.write("Student ID: ")
 			file.write(student_number)
 			file.write("\n")
-			file.write(student_answers_str)
 			file.write("\n")
+
+			for i in range (1,count):
+				j = i-1
+				for x in range(0,5):
+					file.write(questions[i][x])
+					file.write("\n")
+				file.write("\n")
+				file.write("Your answer: ")
+				file.write(student_answers[j])
+				file.write("\n")
+				file.write("Correct answer: ")
+				file.write(questions[i][5])
+				file.write("\n")
+				file.write("\n")
+
+			file.write(summary)
+		
 		else:
 			print "Answers have not been saved."
 
-		print "For more practice, create your own questions in Excel and run it in this program!"
+		print "For more practice, create your own questions in Excel!"
 	
 	else:
 		print "Okay. Maybe later!"
