@@ -1,5 +1,5 @@
 #Sample Quiz Template (Submission only)
-#Last updated: 2016/12/04
+#Last updated: 2017-02-09
 
 #Imports spreadsheet
 from sys import argv
@@ -11,9 +11,9 @@ score = 0
 student_answers = []
 
 #Reads excel file and saves the information into the questions variable
-def read_questions():
+def read_questions(import_file):
 	global count
-	script, spreadsheet = argv
+	script, spreadsheet = argv, import_file
 	questions = []
 	
 	with open(spreadsheet, 'rb') as sample_questions:
@@ -69,7 +69,10 @@ def main():
 	print "Please enter your student number."
 	student_number = raw_input(prompt)
 
-	questions = read_questions() 
+	print "Please enter the csv filename (e.g. questions.csv)"
+	csvfile = raw_input(prompt)
+
+	questions = read_questions(csvfile) 
 	num = count - 1
 
 	print "There will be %s of multiple choice questions." %num
@@ -121,7 +124,7 @@ def main():
 		else:
 			print "Answers have not been saved."
 
-		print "For more practice, create your own questions in Excel!"
+		print "For more practice, download study guides from my dropbox or create your own in Excel!"
 	
 	else:
 		print "Okay. Maybe later!"
